@@ -5,7 +5,6 @@ from werkzeug.utils import secure_filename
 from routes.auth.user import DummyUser
 from datetime import datetime  
 import os
-import face_recognition
 import numpy as np
 import re
 from PIL import Image
@@ -143,3 +142,4 @@ def check_auth():
     if current_user.is_authenticated:
         return jsonify({"status": "ok"})
     return jsonify({"status": "unauthorized"}), 401
+
