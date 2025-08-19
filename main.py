@@ -5,7 +5,6 @@ from routes.quizassign.assignment_fetch import router as assignment_fetch_router
 from routes.quizassign.faculty_view import router as Faculty_router
 from routes.quizassign.student_view import router as Student_router
 from routes.auth.auth import router as auth_router
-from routes.auth.face_login import router as face_login_router
 from routes.chatbot.chat import router as chat_router
 from difflib import SequenceMatcher
 from flask_login import LoginManager
@@ -31,7 +30,6 @@ app.register_blueprint(Student_router)
 app.register_blueprint(generate_questions.router)
 app.register_blueprint(explain_answers.router)
 app.register_blueprint(auth_router)
-app.register_blueprint(face_login_router)
 app.register_blueprint(chat_router)
 
 @app.route("/", methods=["GET"])
@@ -44,3 +42,4 @@ def load_user(user_id):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
